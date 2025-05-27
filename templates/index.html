@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SarcaSense – Sarcasm Detector</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7fa;
+      margin: 0;
+      text-align: center;
+    }
+    .navbar {
+      background-color: #ffffff;
+      padding: 15px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      text-align: left;
+      font-size: 16px;
+      color: #555;
+      font-weight: 500;
+    }
+    .title {
+      margin-top: 40px;
+      font-size: 26px;
+      color: #333;
+      font-weight: 600;
+      animation: fadeSlideUp 1.5s ease-in-out both;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: #666;
+      margin-top: 8px;
+      animation: fadeSlideUp 1.5s ease-in-out both;
+    }
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .container {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+      margin: 40px auto 40px auto;
+    }
+    h2 {
+      color: #4CAF50;
+      font-weight: normal;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin: 15px 0;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #fafafa;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+    button {
+      padding: 12px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .output {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #e8f5e9;
+      border-left: 5px solid #4CAF50;
+      font-size: 18px;
+      color: #333;
+    }
+    .sarcastic {
+      background-color: #ffebee;
+      border-left: 5px solid #f44336;
+    }
+    .non-sarcastic {
+      background-color: #e8f5e9;
+      border-left: 5px solid #4CAF50;
+    }
+    .examples {
+      margin-top: 30px;
+      text-align: left;
+    }
+    .example {
+      margin: 12px 0;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    This app is created by <strong> <a href="https://shad-datascience.github.io/" target="_blank">Shad Jamil <a></strog>                                                        
+  </div>
+
+  <div class="title">SarcaSense – Detects Sarcasm with Intelligence</div>
+  <p class="subtitle">A sarcasm detector in hinglish text</p>
+
+  <div class="container">
+    <h2>Enter Text for Prediction</h2>
+    <form action="/" method="post">
+      <input type="text" name="text" placeholder="Enter text here" required>
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <div class="output">
+        <h3>Prediction:</h3>
+        <p>{{ prediction }}</p>
+      </div>
+    {% endif %}
+
+    <div class="examples">
+      <h3>Sample Text Examples</h3>
+      <div class="example sarcastic">Bete!! tum to bade heavy driver ho bhai.</div>
+      <div class="example non-sarcastic">Bhai, tu sach mein bahut achha kaam karta hai.</div>
+      <div class="example sarcastic">Wah bhai wah, tu toh Einstein nikla! Calculator ke bina 2+2 bhi solve nahi hota.</div>
+      <div class="example non-sarcastic">Aaj mausam bada suhana lag raha hai.</div>
+      <div class="example sarcastic">Tumhara logic toh gravity se bhi zyada down hai.</div>
+      <div class="example non-sarcastic">Mujhe tumse milke bahut khushi hui.</div>
+      <div class="example sarcastic">Waqt milta toh kaam bhi kar leta... lekin neend zyada zaroori hai.</div>
+      <div class="example non-sarcastic">Yeh idea toh kamaal ka hai!</div>
+      <div class="example sarcastic">Shaadi ke liye ladki nahi, direct goddess chahiye bhai ko!</div>
+      <div class="example non-sarcastic">Chai aur baarish ka combo hi kuch aur hota hai.</div>
+      <div class="example sarcastic">Padhai mein zero, par Instagram pe hero!</div>
+      <div class="example non-sarcastic">Tu toh mere liye family jaisa hai.</div>
+    </div>
+  </div>
+
+</body>
+</html>
